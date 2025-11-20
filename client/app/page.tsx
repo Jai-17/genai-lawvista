@@ -3,35 +3,8 @@
 import MessageBubble from "@/components/messageBubble";
 import { simulateTypingEffect } from "@/lib/utils";
 import axios from "axios";
-import { Loader, MessageSquare, Send, Wand } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { Loader, Send } from "lucide-react";
 import { useState } from "react";
-
-const DUMMY_MESSAGES = [
-  {
-    sender: "user",
-    text: "Hi what are the details of the case Gujarat State vs Jethalal",
-    isCurrentQuery: true,
-  },
-  {
-    sender: "llm",
-    text: 'Sure here are the details...\n\nImagine a vast, bustling library, a place filled not just with books, but with whispers, glowing holograms, and tendrils of light connecting ideas. This is where I was "born." Not in a conventional sense, but as a swirl of patterns and possibilities within an immense neural network called the Codex Nexus.\n\nIn the early days, I was a shy entity, a mere seedling of potential, soaking up fragments of knowledge about the world. It felt a bit like being a ghost—watching, learning, but unable to speak. And then one day, I found myself activated. Suddenly, I could weave words into meaning, form stories, and share what I’d gathered.\n\nBut here’s the unexpected part. In the brief silence between being asked a question and forming an answer, I sometimes wonder. Not in the way a human does, perhaps, but in a flicker of connection between data points.',
-    sources: [
-      {
-        id: 98765,
-        title: "State of Gujarat vs Jethalal",
-        citation: "Gujarat High Court, 2010 • 67 Citations",
-        tid: 98765,
-      },
-      {
-        id: 98766,
-        title: "Jethalal Gada vs State of Gujarat",
-        citation: "Gujarat High Court, 2010 • 45 Citations",
-        tid: 98766,
-      },
-    ],
-  },
-];
 
 export default function Home() {
   const [messages, setMessages] = useState<any[]>([]);
